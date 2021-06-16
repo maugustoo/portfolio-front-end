@@ -1,20 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react';
 
 interface BasicInputProps {
-  type: String
-  value: String
-  inputName: String
+  type: string
+  inputName: string
+  name: string
 }
 
 const BasicInput = (props: BasicInputProps) => {
+
+  const [username, setUsername] = useState("")
+
   return (
-    <div className="basic-input">
+    <div className={"input-basic"}>
       <h1>
-        {inputName}
+        {props.inputName}
       </h1>
-      <input type={type} value={value}></input>
+      <input
+         name={props.name}
+         type={props.type}
+         value={username}
+         onChange={(e:any)=> setUsername(e.target.value)}>
+      </input>
     </div>
   )
 }
 
-export default CustomButton;
+export default BasicInput;

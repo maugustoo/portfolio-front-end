@@ -1,0 +1,13 @@
+.custom-button {
+    background-color: #3c5ea7; /* Green */
+    border: 15px;
+    color: white;
+    font-size: 14px;
+    margin: 10px;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    min-width: 60px;
+    min-height: 20px;
+  }

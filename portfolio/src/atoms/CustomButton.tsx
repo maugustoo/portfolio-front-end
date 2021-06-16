@@ -1,14 +1,20 @@
 import React from 'react'
+import './CustomButton.css'
 
 interface CustomButtonProps {
-    name: String
+    name: string
+    type: any
 }
 
 const CustomButton = (props: CustomButtonProps) => {
+
     return (
-        <div className="custom-button">
-            <button>
-                { props.name }
+        <div>
+            <button
+                className="custom-button"
+                type={props.type}
+            >
+                {props.name}
             </button>
         </div>
     )
