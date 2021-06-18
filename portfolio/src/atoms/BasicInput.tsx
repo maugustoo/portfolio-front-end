@@ -4,11 +4,10 @@ interface BasicInputProps {
   type: string
   inputName: string
   name: string
+  setValue: any
 }
 
 const BasicInput = (props: BasicInputProps) => {
-
-  const [username, setUsername] = useState("")
 
   return (
     <div className={"input-basic"}>
@@ -18,8 +17,7 @@ const BasicInput = (props: BasicInputProps) => {
       <input
          name={props.name}
          type={props.type}
-         value={username}
-         onChange={(e:any)=> setUsername(e.target.value)}>
+         onChange={(e:any)=> props.setValue(e.target.value)}>
       </input>
     </div>
   )

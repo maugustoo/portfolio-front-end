@@ -1,34 +1,53 @@
-import React from 'react'
+import React, { useState } from 'react'
 import BasicInput from '../atoms/BasicInput';
 
+import About from './About'
 import CustomButton from '../atoms/CustomButton'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route
+} from "react-router-dom";
 
 const SignUpContainer = () => {
 
-    const handleSubmit = (event:any)=>{
-        // console.log(event.target.username.value)
-        console.log(event.target.password.value)
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+
+    const handleSubmit = (event: any) => {
+        console.log(username, password)
     }
 
     return (
-        <div className="container">
-            <form onSubmit={handleSubmit}>
-                <BasicInput
-                    type="input"
-                    inputName="Usuario"
-                    name="username"
-                />
-                <BasicInput
-                    type="password"
-                    inputName="Senha"
-                    name="password"
-                />
-                <CustomButton
-                 name="Entrar"
-                 type="submit"
-                  />
-            </form>
-        </div>
+        <Router>
+            <div className="container">
+                <form onSubmit={handleSubmit}>
+                    <BasicInput
+                        type="input"
+                        inputName="Usuario"
+                        name="username"
+                        setValue={setUsername}
+                    />
+                    <BasicInput
+                        type="password"
+                        inputName="Senha"
+                        name="password"
+                        setValue={setPassword}
+                    />
+                    <CustomButton
+                        name="Entrar"
+                        type="submit"
+                    >
+                    </CustomButton>
+                </form>
+            </div>
+
+            <Switch>
+                <Route path="/about">
+                    <About />
+                </Route>
+            </Switch>
+        </Router>
     )
 }
 
