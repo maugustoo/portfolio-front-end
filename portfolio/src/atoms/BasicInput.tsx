@@ -5,13 +5,14 @@ interface BasicInputProps {
   inputName: string
   name: string
   setValue: any
+  titleClass: string
 }
 
 const BasicInput = (props: BasicInputProps) => {
 
   return (
     <div className={"input-basic"}>
-      <h1>
+      <h1 className={props.titleClass}>
         {props.inputName}
       </h1>
       <input
