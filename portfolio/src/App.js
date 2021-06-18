@@ -1,11 +1,17 @@
 import './App.css';
 
-import SignUpContainer from './components/SignUpContainer'
+import Content from './pages/Content'
+
+import {
+  BrowserRouter as Router
+} from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <SignUpContainer />
+      <Router>
+        <Content />
+      </Router>
     </div>
   );
 }
